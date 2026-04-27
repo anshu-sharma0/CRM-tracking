@@ -35,3 +35,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # CRM-tracking
+
+## Env example
+
+MONGODB_URI=mongodb://127.0.0.1:27017/tracking-crm
+MONGODB_DB=tracking-crm
+AUTH_SECRET=replace-with-a-long-random-secret
+AUTH_EMAIL=admin@trackingcrm.local
+AUTH_PASSWORD=admin123
+AUTH_NAME=CRM Admin
