@@ -30,7 +30,7 @@ export function LoginForm() {
     setIsSubmitting(false);
 
     if (result?.error) {
-      setError("Invalid credentials. Update your env vars or use the defaults.");
+      setError("Invalid credentials.");
       return;
     }
 

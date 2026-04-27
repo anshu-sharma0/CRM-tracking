@@ -46,9 +46,9 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         <p className="text-xs uppercase tracking-[0.3em] text-sky-300">
           Tracking CRM
         </p>
-        <h1 className="mt-3 text-2xl font-semibold leading-tight">
+        {/* <h1 className="mt-3 text-2xl font-semibold leading-tight">
           Freelancer sales cockpit
-        </h1>
+        </h1> */}
       </div>
       <nav className="space-y-2">
         {navItems.map((item) => {
@@ -73,9 +73,6 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
           );
         })}
       </nav>
-      <div className="mt-auto rounded-3xl bg-white/10 p-4 text-sm text-slate-300">
-        Track outreach, follow-ups, proposals, and payments from one place.
-      </div>
     </div>
   );
 }

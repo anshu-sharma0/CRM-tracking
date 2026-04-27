@@ -18,7 +18,6 @@ export async function Navbar() {
         </h2>
       </div>
       <div className="flex items-center gap-3 self-start sm:self-auto">
-        <Badge tone="success">Protected</Badge>
         <div className="flex items-center gap-3 rounded-2xl bg-slate-950 px-3 py-2 text-white">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-400 font-semibold text-slate-950">
             {getInitials(user?.name)}
