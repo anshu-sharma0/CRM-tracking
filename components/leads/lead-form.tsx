@@ -36,6 +36,7 @@ export function LeadForm({
   leadId?: string;
 }) {
   const router = useRouter();
+  const today = formatDateForInput(new Date());
   const [values, setValues] = useState<LeadFormValues>({
     name: initialValues?.name || "",
     phone: initialValues?.phone || "",
@@ -46,8 +47,8 @@ export function LeadForm({
     budget: initialValues?.budget || 0,
     notes: initialValues?.notes || "",
     status: initialValues?.status || "New",
-    nextFollowUp: initialValues?.nextFollowUp || "",
-    lastContact: initialValues?.lastContact || "",
+    nextFollowUp: initialValues?.nextFollowUp || today,
+    lastContact: initialValues?.lastContact || today,
   });
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -108,6 +109,7 @@ export function LeadForm({
             <Input
               value={values.phone}
               onChange={(event) => handleChange("phone", event.target.value)}
+              type="tel"
               placeholder="+1 555 010 8899"
               required
             />
@@ -235,28 +237,4 @@ function Field({
       {children}
     </label>
   );
-}
-
-export function mapLeadValues(lead: {
-  name: string;
-  phone: string;
-  city: string;
-  type: string;
-  requirement: string;
-  source: string;
-  budget: number;
-  notes?: string;
-  status: LeadStatus;
-  nextFollowUp?: Date | string | null;
-  lastContact?: Date | string | null;
-}) {
-  return {
-    ...lead,
-    source: leadSources.includes(lead.source as LeadSource)
-      ? (lead.source as LeadSource)
-      : "Other",
-    notes: lead.notes || "",
-    nextFollowUp: formatDateForInput(lead.nextFollowUp),
-    lastContact: formatDateForInput(lead.lastContact),
-  };
 }

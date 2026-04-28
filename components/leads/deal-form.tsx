@@ -69,7 +69,7 @@ export function DealForm({
           ))}
         </Select>
       </label>
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
+      <Button type="submit" className="w-full mt-4" disabled={isSubmitting}>
         {isSubmitting ? (
           <>
             <LoaderCircle className="h-4 w-4 animate-spin" />

@@ -42,26 +42,6 @@ export default async function DashboardPage() {
 
       <section className="grid gap-6 xl:grid-cols-[1.35fr_0.95fr]">
         <Card className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-sky-600">Revenue snapshot</p>
-              <h3 className="text-2xl font-semibold text-slate-900">
-                {formatCurrency(stats.totalRevenue)}
-              </h3>
-            </div>
-            <div className="rounded-3xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
-              Won deals drive your booked revenue total.
-            </div>
-          </div>
-          <div className="rounded-[2rem] bg-slate-950 p-6 text-white">
-            <p className="text-sm text-slate-300">
-              Keep this dashboard as your daily command center: review due
-              follow-ups, update proposal status, and spot stalled deals fast.
-            </p>
-          </div>
-        </Card>
-
-        <Card className="space-y-4">
           <div>
             <p className="text-sm font-medium text-sky-600">Upcoming follow-ups</p>
             <h3 className="text-2xl font-semibold text-slate-900">
