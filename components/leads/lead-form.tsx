@@ -214,13 +214,6 @@ export function LeadForm({
         {error ? <p className="text-sm text-rose-600">{error}</p> : null}
 
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
-          <Button
-            type="button"
-            variant="secondary"
-            onClick={() => router.back()}
-          >
-            Cancel
-          </Button>
           <Button type="submit" disabled={isSubmitting}>
             {isSubmitting ? (
               <>
@@ -232,6 +225,13 @@ export function LeadForm({
             ) : (
               "Update lead"
             )}
+          </Button>
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={() => router.back()}
+          >
+            Cancel
           </Button>
         </div>
       </form>
