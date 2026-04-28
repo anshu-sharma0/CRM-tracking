@@ -5,11 +5,18 @@ import { useRouter } from "next/navigation";
 import { startTransition, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { CreatableSelect } from "@/components/ui/creatable-select";
 import { FormWrapper } from "@/components/ui/form-wrapper";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { leadSources, leadStatuses, type LeadSource, type LeadStatus } from "@/lib/constants";
+import {
+  businessCategories,
+  leadSources,
+  leadStatuses,
+  type LeadSource,
+  type LeadStatus,
+} from "@/lib/constants";
 import { formatDateForInput } from "@/lib/utils";
 
 type LeadFormValues = {
@@ -60,6 +67,12 @@ export function LeadForm({
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
+
+    if (!values.type.trim()) {
+      setError("Business type is required.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     const endpoint = mode === "create" ? "/api/leads" : `/api/leads/${leadId}`;
@@ -123,11 +136,13 @@ export function LeadForm({
             />
           </Field>
           <Field label="Business Type">
-            <Input
+            <CreatableSelect
               value={values.type}
-              onChange={(event) => handleChange("type", event.target.value)}
-              placeholder="Dental clinic"
-              required
+              onChange={(type) => handleChange("type", type)}
+              options={businessCategories.map((category) => category)}
+              placeholder="Select or add a business category"
+              searchPlaceholder="Search or type a new category"
+              addButtonLabel="Add"
             />
           </Field>
           <Field label="Source">

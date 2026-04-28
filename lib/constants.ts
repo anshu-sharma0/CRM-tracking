@@ -26,6 +26,16 @@ export const leadSources = [
   "Other",
 ] as const;
 
+export const businessCategories = [
+  "Jewellery",
+  "Dental Clinic",
+  "Gym",
+  "Restaurant",
+  "Real Estate",
+  "Coaching Center",
+  "Hospital",
+] as const;
+
 export const leadStatusStyles: Record<(typeof leadStatuses)[number], string> = {
   New: "bg-sky-100 text-sky-800",
   Contacted: "bg-violet-100 text-violet-800",
